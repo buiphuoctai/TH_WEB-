@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau03_Buoi04</title>
+    <meta name="author" content="Bùi Phước Tài">
+    <meta name="student-id" content="24691051">
+</head>
+
+<body>
+    <p id="student-info" style="font: 16px Arial, sans-serif; color: #222;">Họ tên: <strong>Bùi Phước Tài</strong> — MSSV: <strong>24691051</strong></p>
+    <button id="btnInc">Increment</button>
+    <span id="count">So lan click: </span>
+
+    <script>
+        var btnInc = document.getElementById('btnInc');
+        var countEle = document.getElementById('count');
+        var count = 0;
+
+        function fn() {
+            count++;
+            countEle.innerText = count;
+        }
+
+        btnInc.onclick = fn
+    </script>
+</body>
+
+</html>

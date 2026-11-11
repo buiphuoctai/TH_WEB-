@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="author" content="Bùi Phước Tài">
+    <meta name="student-id" content="24691051">
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-template-areas: "menu" "search" "trend" "footer";
+    }
+    
+    .container div.menu {
+        grid-area: menu;
+    }
+    
+    .container div.search {
+        grid-area: search;
+    }
+    
+    .container div.trend {
+        grid-area: trend;
+    }
+    
+    .container div.footer {
+        grid-area: footer;
+    }
+    
+    #menu {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    li {
+        display: inline;
+        margin: 10px
+    }
+</style>
+
+<body>
+    <p id="student-info" style="font: 16px Arial, sans-serif; color: #222;">Họ tên: <strong>Bùi Phước Tài</strong> — MSSV: <strong>24691051</strong></p>
+    <div class="container">
+        <div id="menu" class="menu">
+            <div>
+                <img src="./Images/group.png" alt="">
+                <img src="./Images/searchengine.png" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li>Images</li>
+                    <li>Videos</li>
+                    <li>Shopping</li>
+                    <li>News</li>
+                </ul>
+            </div>
+            <div>
+                <img src="./Images/avatar.png" alt="">
+                <p>Bùi Phước Tài</p>
+                <img src="./Images/chervon.png" alt="">
+            </div>
+        </div>
+
+        <div class="search">search</div>
+        <div class="trend">trend</div>
+        <div class="footer">footer</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau02_Buoi04</title>
+
+    <style>
+        .display {
+            display: inline;
+        }
+        
+        .disappear {
+            display: none;
+        }
+    </style>
+    <meta name="author" content="Bùi Phước Tài">
+    <meta name="student-id" content="24691051">
+</head>
+
+<body>
+    <p id="student-info" style="font: 16px Arial, sans-serif; color: #222;">Họ tên: <strong>Bùi Phước Tài</strong> — MSSV: <strong>24691051</strong></p>
+    <button id="btnDis">Disappear</button>
+    <button id="btnShow">Show</button>
+    <span id="display">I'm here</span>
+
+    <script>
+        var btnDis = document.getElementById('btnDis');
+        var btnShow = document.getElementById('btnShow');
+        var display = document.getElementById('display');
+
+        btnDis.onclick = () => {
+            console.log('click');
+            display.classList.remove('display');
+            display.classList.add('disappear');
+        }
+
+        btnShow.onclick = () => {
+            console.log('click');
+            display.classList.remove('disappear');
+            display.classList.add('display');
+        }
+    </script>
+</body>
+
+</html>

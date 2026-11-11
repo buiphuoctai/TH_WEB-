@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buoi9_JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <meta name="author" content="Bùi Phước Tài">
+    <meta name="student-id" content="24691051">
+</head>
+
+<body>
+    <p id="student-info" style="font: 16px Arial, sans-serif; color: #222;">Họ tên: <strong>Bùi Phước Tài</strong> — MSSV: <strong>24691051</strong></p>
+    <h1>Chào mừng đến Bookstore Online</h1>
+    <script>
+        $(document).ready(function() {
+            console.log("jQuery đã sẵn sàng!");
+        });
+    </script>
+
+    <div id="book-list">
+        <div class="book" data-genre="fiction">
+            <h3>Đắc Nhân Tâm</h3>
+            <p class="price">120.000đ</p>
+        </div>
+        <div class="book" data-genre="skill">
+            <h3>Tư Duy Nhanh và Chậm</h3>
+            <p class="price">150.000đ</p>
+        </div>
+        <div class="book" data-genre="fiction">
+            <h3>Nhà Giả Kim</h3>
+            <p class="price">89.000đ</p>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            // 1. Đếm số sách hiện có
+            console.log("Số sách hiện có:", $(".book").length);
+
+            // 2. Lấy tất cả sách thể loại fiction
+            $("[data-genre='fiction']").css("border", "2px solid blue");
+
+            // 3. Lấy cuốn sách đầu tiên
+            console.log("Cuốn sách đầu tiên là:", $(".book:first h3").text());
+
+            // 4. Thêm nút Xóa vào mỗi cuốn sách hiện có
+            $(".book").append('<button class="btn-delete">Xóa</button>');
+        });
+    </script>
+
+
+    <button id="add-book">Thêm sách ngẫu nhiên</button>
+    <script>
+        $(function() {
+            // Tạo ds sách ngẫu nhiên
+            const books = [{
+                title: "Thiên Quan Tứ Phúc",
+                price: "135.000đ",
+                genre: "skill"
+            }, {
+                title: "Đọc Thầm",
+                price: "85.000đ",
+                genre: "skill"
+            }, {
+                title: "Ngụy Trang Học Tra",
+                price: "65.000đ",
+                genre: "fiction"
+            }, {
+                title: "Ma Đạo Tổ Sư",
+                price: "99.000đ",
+                genre: "self-help"
+            }, {
+                title: "Toàn Cầu Tiến Hóa",
+                price: "110.000đ",
+                genre: "fiction"
+            }];
+            // Thêm sách
+            $('#add-book').click(function() {
+                // Chọn ngẫu nhiên 1 cuốn sách
+                const randomIndex = Math.floor(Math.random() * books.length);
+                const book = books[randomIndex];
+                // Tạo html cho sách mới
+                const newBook = `
+                    <div class="book" data-genre="${book.genre}">
+                        <h3>${book.title}</h3>
+                        <p class="price">${book.price}</p>
+                        <button class="btn-delete">Xóa</button>
+                    </div>
+                `;
+                // Thêm sách vào cuối ds
+                $("#book-list").append(newBook);
+                console.log("Số sách sau khi đã thêm:", $(".book").length);
+            });
+
+            // Event Delegation: Xử lý sự kiện xóa sách
+            $("#book-list").on("click", ".btn-delete", function() {
+                // Tìm cuốn sách chứa nút Xóa và xóa nó
+                $(this).closest(".book").remove();
+
+                console.log("Số sách còn lại:", $(".book").length);
+            });
+        });
+    </script>
+</body>
+
+</html>

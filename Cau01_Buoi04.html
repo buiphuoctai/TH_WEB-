@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau01_Buoi04</title>
+    <meta name="author" content="Bùi Phước Tài">
+    <meta name="student-id" content="24691051">
+</head>
+
+<body>
+    <p id="student-info" style="font: 16px Arial, sans-serif; color: #222;">Họ tên: <strong>Bùi Phước Tài</strong> — MSSV: <strong>24691051</strong></p>
+    <button id="btnClick">Click vao se doi sang mau do</button>
+    <p id="para">Bùi Phước Tài</p>
+
+    <script>
+        //step1:
+        var btnClick = document.getElementById('btnClick');
+        console.log(btnClick);
+        var para = document.getElementById('para');
+        console.log(para);
+
+        //step2:
+        btnClick.onclick = () => {
+            //step3:
+            para.style.color = 'red';
+            para.style.backgroundColor = 'yellow'
+        }
+    </script>
+</body>
+
+</html>
